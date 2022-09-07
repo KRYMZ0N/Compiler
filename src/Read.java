@@ -1,3 +1,5 @@
+import keyword.Keyman;
+import keyword.Keyword;
 import util.ArgumentUtil;
 
 import java.io.File;
@@ -19,9 +21,11 @@ public class Read {
 
                 String[] args = ArgumentUtil.parseStringCom(data);
 
-                if (args[0].equals("PRINT")) {
-                    Print.printing(args[1]);
-
+                for (Keyword k : Keyman.list)  {
+                    if (k.getName().equals(args[1])) {
+                        k.onEnable();
+                        break;
+                    }
                 }
             }
             myReader.close();

@@ -10,4 +10,8 @@ public class Keyword {
     public String getName() {
         return name;
     }
+
+    public void onEnable() {
+
+    }
 }
