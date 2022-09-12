@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Read {
 
     public static void ReadF() {
+        Keyman keys = new Keyman();
         try {
             File file = new File(Main.FileName);
 
@@ -21,8 +22,9 @@ public class Read {
 
                 String[] args = ArgumentUtil.parseStringCom(data);
 
-                for (Keyword k : Keyman.list)  {
-                    if (k.getName().equals(args[1])) {
+                for (Keyword k : keys.list)  {
+                    if (k.getName().equals(args[0])) {
+                        k.setValue(args[1]);
                         k.onEnable();
                         break;
                     }
@@ -42,7 +44,6 @@ public class Read {
         int index = fileName.lastIndexOf('.');
         if(index > 0) {
             String extension = fileName.substring(index + 1);
-            System.out.println("File extension is " + extension);
 
             return extension;
         }

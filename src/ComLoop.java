@@ -15,7 +15,6 @@ public class ComLoop {
             if (args.length < 2) return;
 
             if (args[0].equals("compile")) { //Taking the second argument and setting it as the filename
-                System.out.println("Sset file");
                 Main.FileName = args[1];
 
                 Read.ReadF();
